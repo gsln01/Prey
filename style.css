@@ -703,3 +703,74 @@ section {
         font-size: 25px;
     }
 }
+
+
+/* CORRECCIÓN DEL MENÚ HAMBURGUESA */
+nav .menu-icon {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    width: 48px;
+    height: 44px;
+    flex-shrink: 0;
+    cursor: pointer;
+    border: 1px solid #22e7e7;
+    border-radius: 6px;
+    background: #071a31;
+    position: relative;
+    z-index: 10001;
+}
+
+nav .menu-icon span {
+    display: block !important;
+    width: 25px;
+    height: 3px;
+    background: #22e7e7 !important;
+    border-radius: 3px;
+}
+
+nav #menu-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+nav .menu {
+    display: none;
+}
+
+nav #menu-toggle:checked ~ .menu {
+    display: flex !important;
+}
+
+nav .menu {
+    position: absolute;
+    top: 100%;
+    right: 6%;
+    width: 320px;
+    max-width: 88vw;
+    flex-direction: column;
+    gap: 0;
+    padding: 10px;
+    background: #051325;
+    border: 1px solid #22e7e7;
+    z-index: 10000;
+}
+
+nav .menu a {
+    display: block;
+    padding: 13px 15px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    nav .menu {
+        right: 5%;
+        width: 300px;
+    }
+}
+
